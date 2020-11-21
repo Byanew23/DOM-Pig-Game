@@ -1,0 +1,5 @@
+#1 A player loses his entire score when he rolls two six in a row.
+
+#2 add an input field to the HTML where the players can set the winning score.
+
+#3 add a second dice to the game, the player loses his current scorethe player loses his current score when only one of them is an one.
