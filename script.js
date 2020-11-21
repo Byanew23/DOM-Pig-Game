@@ -1,11 +1,23 @@
-var scores, roundScore, activePlayer, gameOver;
+var scores, roundScore, activePlayer, gameOver, gameScore;
 
 scores = [0,0];
 roundScore = 0;
 activePlayer = 0;
 gameOver = false;
 
-resetState();
+
+document.querySelector('.dice').style.display = 'none';
+function setScore() {
+    gameScore = document.querySelector('.scoreInput').value;
+    resetState();
+    activeName();
+    document.querySelector('.scoreField').style.display = 'none';
+    buttonState(false);
+}
+
+gameScore = document.querySelector('.scoreInput').value;
+
+console.log(gameScore);
 
 function buttonState(state){
     document.querySelector('.btn.btn--roll').disabled = state;
@@ -22,8 +34,9 @@ function resetState(){
     scores = [0,0];
     activePlayer = 0;
     document.querySelector('.dice').style.display = 'none';
-    buttonState(false);
-    activeName();
+    document.querySelector('.scoreField').style.display = 'block';
+    buttonState(true);
+    
 }
 
 function activeName(){
@@ -75,7 +88,7 @@ document.querySelector('.btn.btn--hold').addEventListener('click', function(){
     roundScore = 0;
     document.querySelector('#current--' + activePlayer).textContent = '0';
     document.querySelector('.dice').style.display = 'none';
-    if(scores[activePlayer] >= 100) {
+    if(scores[activePlayer] >= gameScore) {
         noBorder();
         buttonState(true);
         document.querySelector('#name--' + activePlayer).textContent = 'PLAYER ' + (activePlayer + 1) + ' IS THE WINNER!';
