@@ -179,14 +179,14 @@ main {
   position: absolute;
   left: 40%;
   width: 220px;
-  transform: translate(-15%, 5rem);
+  transform: translate(0%, 5rem);
   font-size: 20px;
 }
 .scoreInputBtn{
   position: absolute;
   left: 40%;
   width: 220px;
-  transform: translate(-15%, 8rem);
+  transform: translate(0%, 8rem);
   font-size: 20px;
 }
 
